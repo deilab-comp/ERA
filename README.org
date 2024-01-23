@@ -1,0 +1,3 @@
+#+title:     Explorando la Realidad Aumentada
+#+author:  Lucas Elvira Martín, Roberto Cuervo Rosillo
+#+email:    luelvira@pa.uc3m.es, rcuervo@pa.uc3m.es

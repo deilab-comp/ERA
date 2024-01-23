@@ -1,0 +1,69 @@
+#+title:     Explorando la Realidad Aumentada
+#+author:  Lucas Elvira Martín, Roberto Cuervo Rosillo
+#+email:    luelvira@pa.uc3m.es, rcuervo@pa.uc3m.es
+* Table of content                                                      :TOC:
+- [[#por-qué-la-uc3m][¿Por qué la UC3M?]]
+  - [[#universidad-pública-por-excelencia][Universidad pública por excelencia]]
+  - [[#modelos-de-enseñanza][Modelos de Enseñanza]]
+  - [[#grados-en-la-uc3m][Grados en la UC3M]]
+  - [[#cursos-y-programas-de-tutorización][Cursos y programas de tutorización]]
+  - [[#sobre-el-futuro][Sobre el futuro...]]
+
+* ¿Por qué la UC3M?
+** Universidad pública por excelencia
+
+- Entre las mejores universidades europeas según el ranking QS Europe
+- Entre las 170 mejores universidades del mundo y las 10 primeras universidades en empleabilidad
+- Entre las mejores universidades del mundo en empleabilidad, (Global University Employability 2022)
+- Primera *universidad pública* que ha conseguido la acreditación [[https://es.wikipedia.org/wiki/Association_to_Advance_Collegiate_Schools_of_Business][AACSB]]
+- Acreditación de ingeniería más prestigiosa de Europa según la ENNAEE y la EUR-ACE
+- Mejores universidades del mundo por su compromiso con los ODS (Objetivos de Desarrollo Sostenible)
+
+** Modelos de Enseñanza
+
+- Presencial
+- Grupos reducidos
+- Evaluación continua
+- Formación práctica -> No se centra tanto en la teoría, también en cómo aplicar esa teoría a la resolución de problemas
+- Formación en diferentes idiomas
+- Habilidades profesionales (foro empleo)
+- Prácticas en empresas
+
+
+*** Formación Integral
+- Formación en humanidades
+- Habilidades profesionales
+- Actividades culturales
+- Deportivas y solidarias
+- Idiomas
+
+*** Formación Complementaria
+- Perfil multidisciplinar
+- Preparación para el máster
+- Formación transversal mediante actividades "extra escolares"
+  - Construye tu formula 1
+  - Crea una radio con Linux
+  - ...
+- SET
+
+** Grados en la UC3M
+- 60 créditos / año * 4 años -> 1 crédito ≈ 25 horas
+- Formación básica en los primeros años (común en distintas carreras o grados)
+- Especialización en los últimos años
+- Prácticas en empresas aseguradas (si quieres hacerlas)
+- Trabajo de fin de grado. Puedes proponer el tuyo o escoger dentro de los que ya hay
+- Doble grado
+
+** Cursos y programas de tutorización
+
+ - =Curso 0= Voluntarios: Ayudan a que todos los alumnos partan de la misma base
+ - =Programa compañeros= Estudiantes veteranos aconsejan y acompañan a los estudiantes de nuevo ingreso
+ - =Programa de bienestar emocional= Se cuenta con ayudas ya sea a nivel de talleres o terapias para ayudar a gestionar el estrés que puede llegar a surgir
+ 
+** Sobre el futuro...
+
+- Test [[https://helen.uc3m.es/login][Helen]]: Un test online para ayudarte a conocer que carrera es más afín a ti
+
+#+ATTR_HTML: :width 10px
+#+ATTR_ORG: :width 100px
+[[file:img/helen.png]]
