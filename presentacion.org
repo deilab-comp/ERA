@@ -1,6 +1,7 @@
 #+title:     Explorando la Realidad Aumentada
 #+author:  Lucas Elvira Martín, Roberto Cuervo Rosillo
 #+email:    luelvira@pa.uc3m.es, rcuervo@pa.uc3m.es
+#+auto_tangle: t 
 * Table of content                                                      :TOC:
 - [[#por-qué-la-uc3m][¿Por qué la UC3M?]]
   - [[#universidad-pública-por-excelencia][Universidad pública por excelencia]]
@@ -8,6 +9,10 @@
   - [[#grados-en-la-uc3m][Grados en la UC3M]]
   - [[#cursos-y-programas-de-tutorización][Cursos y programas de tutorización]]
   - [[#sobre-el-futuro][Sobre el futuro...]]
+- [[#qué-vamos-a-hacer-hoy][¿Qué vamos a hacer hoy?]]
+  - [[#vamos-a-crear-una-aplicacion-de-realidad-aumentada][Vamos a crear una aplicacion de realidad aumentada!]]
+  - [[#descargamos-la-demo][Descargamos la demo]]
+  - [[#siguiente-paso][Siguiente paso]]
 
 * ¿Por qué la UC3M?
 ** Universidad pública por excelencia
@@ -64,6 +69,65 @@
 
 - Test [[https://helen.uc3m.es/login][Helen]]: Un test online para ayudarte a conocer que carrera es más afín a ti
 
-#+ATTR_HTML: :width 10px
-#+ATTR_ORG: :width 100px
+#+ATTR_HTML: :height 10px
 [[file:img/helen.png]]
+
+
+* ¿Qué vamos a hacer hoy?
+
+** Vamos a crear una aplicacion de realidad aumentada!
+
+La realidad aumentada o AR esta cada vez mas presente en diferentes entornos y cada vez es mas accesible para todo el mundo.
+
+De hecho, ¡Podemos crear nuestra primera aplicacion para usarla desde el movil!
+
+** Descargamos la demo
+
+Para descargar la demo debemos ir a [[https://github.com/deilab-comp/ERA]], pulsar
+en =code= y =descargar zip=.
+
+
+#+begin_src html :tangle index.html
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <!--
+      <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
+      <a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E"></a-sphere>
+      <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
+      <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
+      <a-sky color="#ECECEC"></a-sky>
+     -->
+    </a-scene>
+    <script type="text/javascript" src="js/physics.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+  </body>
+</html>
+#+end_src
+
+** Siguiente paso
+
+Con esto, tenemos lo mas basico, pero no hace nada... vamos a ver si podemos animarlo un poco!
+
+Podemos empezar por aplicar algo de fisica a los objetos
+
+#+begin_src js :tangle js/main.js
+const scene = document.getElementsByTagName("a-scene")[0];
+const spheres = [];
+
+console.log("hola");
+for (let i = 0; i < 1; i++) {
+  const sphere = document.createElement("a-sphere");
+  sphere.setAttribute("position", {x: 0, y: 2, z: -2});
+  sphere.setAttribute("radius", "0.2");
+  sphere.setAttribute("color", "#FFC65D");
+  sphere.setAttribute("gravity", true);
+  scene.appendChild(sphere);
+  spheres.push(sphere);
+}
+
+#+end_src
+
