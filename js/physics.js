@@ -22,7 +22,7 @@ AFRAME.registerComponent("gravity", {
   tick: function(time, timeDelta) {
     if (!this.ready || this.diff < 1e-4) return;
     if (this.el.object3D.position.y <= this.radius) {
-      let speed = Math.pow(Math.abs(2*a*this.initialPos.y), 0.5);
+      let speed = final_speed(this.initialPos.y);
       this.expectedY = Math.pow(e, 2)*this.initialPos.y - this.radius;
       this.initialSpeed = e*speed;
       this.startInterval = new Date();
@@ -39,14 +39,8 @@ AFRAME.registerComponent("gravity", {
       this.expectedY += 2;
     }
     this.elapsed+= timeDelta
-    //if (elapsed > 3) return;
-    let distance = getDistance(this.initialPos.y, this.initialSpeed, this.elapsed/1000);
+    let distance = calculatePosition(this.initialPos.y, this.initialSpeed, this.elapsed/1000) ?? this.el.object3D.position.y;
     this.diff = Math.abs(this.el.object3D.position.y - distance);
     this.el.object3D.position.set(this.position.x, distance, this.position.z);
   }
 });
-
-
-function getDistance(high, speed, time) {
-  return high + speed*time + 0.5 * a * Math.pow(time, 2);
-}

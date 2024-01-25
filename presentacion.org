@@ -34,7 +34,6 @@
 - Habilidades profesionales (foro empleo)
 - Prácticas en empresas
 
-
 *** Formación Integral
 - Formación en humanidades
 - Habilidades profesionales
@@ -108,15 +107,17 @@ en =code= y =descargar zip=.
 #+end_src
 
 ** Siguiente paso
+:PROPERTIES:
+:HEADER-ARGS:js: :tangle js/main.js
+:END:
 
 Con esto, tenemos lo mas basico, pero no hace nada... vamos a ver si podemos animarlo un poco!
 
 Podemos empezar por aplicar algo de fisica a los objetos
 
-#+begin_src js :tangle js/main.js
+#+begin_src js
 const scene = document.getElementsByTagName("a-scene")[0];
 const spheres = [];
-
 for (let i = 0; i < 10; i++) {
   const sphere = document.createElement("a-sphere");
   let [x, y, z] = [(Math.random()*5 - 2.5), 3+(Math.random()*2 - 1), -3+(Math.random()*0.5 - 0.25)]
@@ -129,5 +130,58 @@ for (let i = 0; i < 10; i++) {
   spheres.push(sphere);
 }
 
+#+end_src
+
+*** Aplicando algo de Física!
+
+Para crear una animación, necesitamos saber en que posición están las esferas
+transcurrido un tiempo. Esto lo podemos hacer con una fórmula muy conocida
+
+**** MUA
+
+\begin{math}
+y = y_{0} + v_{0}*t + \frac{1}{2} * a * t^{2}
+\end{math}
+
+#+begin_src js
+function calculatePosition(position, speed, time) {
+  return position + speed * time + 0.5 * a * Math.pow(time, 2);
+}
+#+end_src
+
+
+**** ¿Podemos hacerlo más realista?
+
+Ahora mismo, tenemos un conjunto de esferas que caen al suelo, pero... podemos
+hacer que reboten!
+
+Para hacer que rebote debemos tener en cuenta que la aceleración y la energía
+son constantes, por lo que nuestra fórmula sigue funcionando.
+
+**** Principio de conservación de la energía
+
+\begin{align*}
+\label{eq:1}
+E_{p} &= m*g*h  \\
+E_{c} &= \frac{1}{2}*m*v^{2}
+\end{align*}
+
+Como sabemos que la energía debe ser constante, podemos calcular la velocidad
+final $v_f$, que ahora será $v'_0$ y la altura que podrá alcanzar tras rebotar.
+En un entorno ideal, debería ser la misma desde la que partimos. 
+
+\begin{align*}
+\label{eq:2}
+E_{p} = E_{c} \\
+m*a*y_{0} = \frac{1}{2}*m*v_{f}^{2}\\
+v_{f} = \sqrt{2*a*y_{0}} \\
+\end{align*}
+
+Ahora, redefinimos $y_0 = y_f$,  $t_0 = t_f$, $v_0 = v_f$ 
+
+#+begin_src js
+function final_speed(initial_position) {
+   return Math.pow(Math.abs(2 * a * initial_position), 0.5);
+}
 #+end_src
 
