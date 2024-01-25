@@ -1,21 +1,22 @@
-#+title:     Explorando la Realidad Aumentada
-#+author:  Lucas Elvira Martín, Roberto Cuervo Rosillo
-#+email:    luelvira@pa.uc3m.es, rcuervo@pa.uc3m.es
-#+auto_tangle: t 
-* Table of content                                                      :TOC:
-- [[#por-qué-la-uc3m][¿Por qué la UC3M?]]
-  - [[#universidad-pública-por-excelencia][Universidad pública por excelencia]]
-  - [[#modelos-de-enseñanza][Modelos de Enseñanza]]
-  - [[#grados-en-la-uc3m][Grados en la UC3M]]
-  - [[#cursos-y-programas-de-tutorización][Cursos y programas de tutorización]]
-  - [[#sobre-el-futuro][Sobre el futuro...]]
-- [[#qué-vamos-a-hacer-hoy][¿Qué vamos a hacer hoy?]]
-  - [[#vamos-a-crear-una-aplicacion-de-realidad-aumentada][Vamos a crear una aplicacion de realidad aumentada!]]
-  - [[#descargamos-la-demo][Descargamos la demo]]
-  - [[#siguiente-paso][Siguiente paso]]
+#+title: Explorando la Realidad Aumentada
+#+author: Lucas Elvira Martín \and Roberto Cuervo Rosillo
+#+email: luelvira@pa.uc3m.es, rcuervo@pa.uc3m.es
+#+date: 2024-01-29 Mon
+
+#+language: en
+#+select_tags: export
+#+exclude_tags: noexport
+#+creator: Emacs 28.2 (Org mode 9.7-pre)
+
+#+startup: beamer
+#+LaTeX_CLASS: beamer
+#+BEAMER_THEME:Madrid 
+#+latex_header: \usepackage{minted}
+#+OPTIONS: H:3 toc:nil p
 
 * ¿Por qué la UC3M?
 ** Universidad pública por excelencia
+*** Excelencia UC3M
 
 - Entre las mejores universidades europeas según el ranking QS Europe
 - Entre las 170 mejores universidades del mundo y las 10 primeras universidades en empleabilidad
@@ -26,6 +27,7 @@
 
 ** Modelos de Enseñanza
 
+*** Se adapta a ti!
 - Presencial
 - Grupos reducidos
 - Evaluación continua
@@ -51,7 +53,9 @@
 - SET
 
 ** Grados en la UC3M
-- 60 créditos / año * 4 años -> 1 crédito ≈ 25 horas
+
+*** ¿En qué consiste un grado?
+- 60 créditos / año * 4 años -> 1 crédito = 25 horas
 - Formación básica en los primeros años (común en distintas carreras o grados)
 - Especialización en los últimos años
 - Prácticas en empresas aseguradas (si quieres hacerlas)
@@ -60,15 +64,18 @@
 
 ** Cursos y programas de tutorización
 
+*** Programas especiales
  - =Curso 0= Voluntarios: Ayudan a que todos los alumnos partan de la misma base
  - =Programa compañeros= Estudiantes veteranos aconsejan y acompañan a los estudiantes de nuevo ingreso
  - =Programa de bienestar emocional= Se cuenta con ayudas ya sea a nivel de talleres o terapias para ayudar a gestionar el estrés que puede llegar a surgir
  
 ** Sobre el futuro...
 
+*** Test Helen
+
 - Test [[https://helen.uc3m.es/login][Helen]]: Un test online para ayudarte a conocer que carrera es más afín a ti
 
-#+ATTR_HTML: :height 10px
+#+ATTR_LATEX: :width 0.5\linewidth
 [[file:img/helen.png]]
 
 
@@ -76,15 +83,35 @@
 
 ** Vamos a crear una aplicacion de realidad aumentada!
 
+*** Crea tu propia aplicación
+
 La realidad aumentada o AR esta cada vez mas presente en diferentes entornos y cada vez es mas accesible para todo el mundo.
 
 De hecho, ¡Podemos crear nuestra primera aplicacion para usarla desde el movil!
 
-** Descargamos la demo
+*** Descargamos la demo
 
-Para descargar la demo debemos ir a [[https://github.com/deilab-comp/ERA]], pulsar
-en =code= y =descargar zip=.
+Para descargar la demo debemos ir a [[https://github.com/deilab-comp/ERA]], pulsar en =code= y =descargar zip=.
 
+#+begin_src html :tangle no
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
+      <a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E"></a-sphere>
+      <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
+      <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
+    </a-scene>
+    <script type="text/javascript" src="js/physics.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+  </body>
+</html>
+#+end_src
+
+*** Pero la podemos modificar
 
 #+begin_src html :tangle index.html
 <html>
@@ -93,10 +120,6 @@ en =code= y =descargar zip=.
   </head>
   <body>
     <a-scene>
-      <!--<a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
-      <a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E"></a-sphere>
-      <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
-      <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>-->
       <a-plane position="0 0 -4" rotation="-90 0 0" width="40" height="40" color="#7BC8A4"></a-plane>
       <a-sky color="#ECECEC"></a-sky>
     </a-scene>
@@ -104,6 +127,7 @@ en =code= y =descargar zip=.
     <script type="text/javascript" src="js/main.js"></script>
   </body>
 </html>
+
 #+end_src
 
 ** Siguiente paso
@@ -111,46 +135,52 @@ en =code= y =descargar zip=.
 :HEADER-ARGS:js: :tangle js/main.js
 :END:
 
+*** Generación de escenas de forma dinámica
 Con esto, tenemos lo mas basico, pero no hace nada... vamos a ver si podemos animarlo un poco!
-
-Podemos empezar por aplicar algo de fisica a los objetos
 
 #+begin_src js
 const scene = document.getElementsByTagName("a-scene")[0];
-const spheres = [];
 for (let i = 0; i < 10; i++) {
   const sphere = document.createElement("a-sphere");
-  let [x, y, z] = [(Math.random()*5 - 2.5), 3+(Math.random()*2 - 1), -3+(Math.random()*0.5 - 0.25)]
-  let r = Math.random()*0.25 + 0.2;
+  let x = (Math.random()*5 - 2.5),
+      y = 3+(Math.random()*2 - 1),
+      z = -3+(Math.random()*0.5 - 0.25),
+      r = Math.random()*0.25 + 0.2;
   sphere.setAttribute("position", {x, y, z});
   sphere.setAttribute("radius", r);
   sphere.setAttribute("color", "#FFC65D");
   sphere.setAttribute("gravity", true);
   scene.appendChild(sphere);
-  spheres.push(sphere);
 }
-
 #+end_src
 
 *** Aplicando algo de Física!
 
-Para crear una animación, necesitamos saber en que posición están las esferas
-transcurrido un tiempo. Esto lo podemos hacer con una fórmula muy conocida
+Para crear una animación, necesitamos saber en que posición están las esferas transcurrido un tiempo. Esto lo podemos hacer con una fórmula muy conocida
 
-**** MUA
+**** MUA                                                            :B_block:
+:PROPERTIES:
+:BEAMER_env: block
+:END:
 
-\begin{math}
+\begin{equation}
 y = y_{0} + v_{0}*t + \frac{1}{2} * a * t^{2}
-\end{math}
+\end{equation}
+
+**** Implementación                                                 :B_block:
+:PROPERTIES:
+:BEAMER_env: block
+:END:
 
 #+begin_src js
 function calculatePosition(position, speed, time) {
-  return position + speed * time + 0.5 * a * Math.pow(time, 2);
+  return position +
+        (speed * time) +
+        (0.5 * a * Math.pow(time, 2));
 }
 #+end_src
 
-
-**** ¿Podemos hacerlo más realista?
+*** ¿Podemos hacerlo más realista?
 
 Ahora mismo, tenemos un conjunto de esferas que caen al suelo, pero... podemos
 hacer que reboten!
@@ -158,10 +188,9 @@ hacer que reboten!
 Para hacer que rebote debemos tener en cuenta que la aceleración y la energía
 son constantes, por lo que nuestra fórmula sigue funcionando.
 
-**** Principio de conservación de la energía
+*** Principio de conservación de la energía
 
 \begin{align*}
-\label{eq:1}
 E_{p} &= m*g*h  \\
 E_{c} &= \frac{1}{2}*m*v^{2}
 \end{align*}
@@ -171,7 +200,6 @@ final $v_f$, que ahora será $v'_0$ y la altura que podrá alcanzar tras rebotar
 En un entorno ideal, debería ser la misma desde la que partimos. 
 
 \begin{align*}
-\label{eq:2}
 E_{p} = E_{c} \\
 m*a*y_{0} = \frac{1}{2}*m*v_{f}^{2}\\
 v_{f} = \sqrt{2*a*y_{0}} \\
